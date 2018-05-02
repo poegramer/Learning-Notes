@@ -12,12 +12,15 @@
 2. 登陆GitHub，打开“Account settings”，“SSH Keys”页面，然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容，点“Add Key”，你就应该看到已经添加的Key：
 
 >为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。
+
 >当然，GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。
 
 ##### 验证SSH链接是否成功
 * ssh -T git@github.com
 >成功结果为：Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
+
 >第一次使用Git的clone或者push命令连接GitHub时，会得到一个警告，输入yes回车即可。
+
     The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.
     RSA key fingerprint is xx.xx.xx.xx.xx.
     Are you sure you want to continue connecting (yes/no)?
@@ -25,6 +28,7 @@
 #### 3.初始化目录
 * git init
 >这样就在本地建立了git仓库，可以直接操作git其他命令。
+
 >此命令执行后，在执行命令的目录下会出现.git文件夹，该文件夹默认为隐藏，可以使用ls -a命令或Ctrl+h查看。
 
 ### 建立本地仓库与github关联
@@ -32,7 +36,7 @@
 * git config --global user.name "Your Name"
 * git config --global user.email "youremail@domain.com"
 >查看配置信息:
-    * git config --list 
+>    * git config --list 
 
 #### 5.本地库与github关联
 * git remote add origin https://github.com/你的github用户名/github仓库名.git
@@ -56,7 +60,9 @@
 
 * git push origin master
 >第一次推送master分支时，加上-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来(git push -u origin master);
+
 >在以后的推送或者拉取时就可以简化命令，只要本地作了提交，就可以通过命令把本地master分支的最新修改推送至GitHub;
+
 >提交的文件有大小限制，注意大文件的移除和备份.
 
 
