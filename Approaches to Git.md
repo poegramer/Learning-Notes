@@ -46,6 +46,10 @@
 ### 克隆github已有仓库及提交到github（下载更新及上传）
 #### 6.克隆github上已有的仓库（下载到本地）
 * **git clone https://github.com/你的github用户名/github仓库名.git**
+>本地无仓库，将远程仓库下载到本地
+
+* **git pull origin master**
+>本地已有仓库，更新本地仓库
 
 #### 7.提交更改内容到github
 * **git add 更改文件名或者是文件夹名或者是点"."**
@@ -83,6 +87,7 @@
 
 * **git push origin master**
 >推送到远程仓库
+
 
 
 
