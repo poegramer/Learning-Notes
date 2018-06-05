@@ -1,6 +1,6 @@
 C++类型的4种层次转换：static_cast、dynamic_cast、const_cast、reinterpret_cast
 
-####static_cast
+#### static_cast
 
 * **用法：**  
 &emsp;&emsp; static_cast &lt;typeid&gt; (expression)
@@ -15,7 +15,7 @@ C++类型的4种层次转换：static_cast、dynamic_cast、const_cast、reinter
 >    **注意： static_cast不能转换掉expression的const、volitale或者__unaligned属性。**
 
 </br>
-####dynamic_cast
+#### dynamic_cast
 
 * **用法：**  
 &emsp;&emsp; dynamic_cast &lt;typeid&gt; (expression)
@@ -32,7 +32,7 @@ C++类型的4种层次转换：static_cast、dynamic_cast、const_cast、reinter
 >&emsp;&emsp; 在上行转换中，static_cast和dynamic_cast效果是一样的，而且都比较安全，因为向上转换的对象一般是指向子类对象的子类类型指针；而在下行转换中，由于可以定义就不同了指向子类对象的父类类型指针，同时static_cast只在编译时进行类型检查，而dynamic_cast是运行时类型检查，则需要视情况而定。
 
 </br>
-####const_cast
+#### const_cast
 
 * **用法：**  
 &emsp;&emsp; const_cast &lt;typeid&gt; (expression)
@@ -46,7 +46,7 @@ C++类型的4种层次转换：static_cast、dynamic_cast、const_cast、reinter
            “…cannot convert from 'const class C *' to 'class C *'”。
 
 </br>
-####reinterpret_cast
+#### reinterpret_cast
 
 * **用法：**  
 &emsp;&emsp; reinterpret_cast &lt;typeid&gt; (expression)
@@ -56,14 +56,14 @@ C++类型的4种层次转换：static_cast、dynamic_cast、const_cast、reinter
 >    **注意：reinterpret_cast不能转换掉expression的const、volitale或者__unaligned属性。**
 
 </br>
-####总结
+#### 总结
 &emsp;&emsp; **const_cast：去除const属性**  
 &emsp;&emsp; **static_cast：基本类型转换**  
 &emsp;&emsp; **daynamic_cast：多态类之间的类型转换**  
 &emsp;&emsp; **reinterpreter_cast：不同类型的指针类型转换**  
 
 </br>
-#####下面的代码是4中casting方法的典型用法示例：
+##### 下面的代码是4中casting方法的典型用法示例：
 
      #include <iostream>
 
